@@ -139,7 +139,8 @@ COPY --from=pkp_code "${BUILD_PKP_APP_PATH}" .
 # Create directories
 RUN mkdir -p /etc/ssl/apache2 "${WWW_PATH_ROOT}/files" /run/apache2
 RUN echo "PKP_CONF: ${PKP_CONF}"
-RUN cp -a config.TEMPLATE.inc.php "${WWW_PATH_ROOT}/html/${PKP_CONF}" 
+RUN cp -a config.inc.php "${WWW_PATH_ROOT}/html/${PKP_CONF}" 
+# RUN cp -a config.TEMPLATE.inc.php "${WWW_PATH_ROOT}/html/${PKP_CONF}" 
 RUN chown -R ${WWW_USER}:${WWW_USER} "${WWW_PATH_ROOT}"
 # Prepare freefont for captcha 
 #	&& ln -s /usr/share/fonts/TTF/FreeSerif.ttf /usr/share/fonts/FreeSerif.ttf \
