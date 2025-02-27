@@ -186,3 +186,7 @@ RUN echo    "==============================================================="   
     && echo "==============================================================="
 
 CMD "${PKP_CMD}"
+
+
+
+RUN curl -o config.inc.php https://raw.githubusercontent.com/izichtl/docker-pkp/refs/heads/feat/only-app/config.inc.php
