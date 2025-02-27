@@ -62,11 +62,11 @@ LABEL build_version="Docker for ${BUILD_PKP_TOOL} ${BUILD_PKP_VERSION} - Build-d
 # ARGs only work during building time, so they need to be exported to ENVs:
 ENV PKP_TOOL="${BUILD_PKP_TOOL:-ojs}"                       \
     PKP_VERSION="${BUILD_PKP_VERSION:-3.3.0-16}"            \
-    SERVERNAME="localhost"                                  \
+    SERVERNAME="https://ojs-project-revista-mentes.yoxbgr.easypanel.host"                                  \
     WWW_USER="www-data"                                     \
     WWW_PATH_CONF="/etc/apache2/apache2.conf"               \
     WWW_PATH_ROOT="/var/www"                                \
-    HTTPS="on"                                              \
+    HTTPS="off"                                              \
     PKP_CLI_INSTALL="0"                                     \
     PKP_DB_HOST="localhost"                                 \
     PKP_DB_USER="${MYSQL_USER:-ojs}"                        \
