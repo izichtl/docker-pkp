@@ -1,5 +1,5 @@
 # Default context
-ARG BUILD_PKP_TOOL=omp              \
+ARG BUILD_PKP_TOOL=ojs              \
     BUILD_PKP_VERSION=3.3.0-16      \
     BUILD_PKP_APP_PATH=/app         \
     BUILD_WEB_SERVER=php:8.1-apache \
