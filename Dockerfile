@@ -62,11 +62,11 @@ LABEL build_version="Docker for ${BUILD_PKP_TOOL} ${BUILD_PKP_VERSION} - Build-d
 # ARGs only work during building time, so they need to be exported to ENVs:
 ENV PKP_TOOL="${BUILD_PKP_TOOL:-ojs}"                       \
     PKP_VERSION="${BUILD_PKP_VERSION:-3.3.0-16}"            \
-    SERVERNAME="https://ojs-project-revista-mentes.yoxbgr.easypanel.host"                                  \
+    SERVERNAME="localhost"                                  \
     WWW_USER="www-data"                                     \
     WWW_PATH_CONF="/etc/apache2/apache2.conf"               \
     WWW_PATH_ROOT="/var/www"                                \
-    HTTPS="off"                                              \
+    HTTPS="on"                                              \
     PKP_CLI_INSTALL="0"                                     \
     PKP_DB_HOST="localhost"                                 \
     PKP_DB_USER="${MYSQL_USER:-ojs}"                        \
@@ -139,9 +139,6 @@ COPY --from=pkp_code "${BUILD_PKP_APP_PATH}" .
 # Create directories
 RUN mkdir -p /etc/ssl/apache2 "${WWW_PATH_ROOT}/files" /run/apache2
 RUN echo "PKP_CONF: ${PKP_CONF}"
-RUN ls -la
-# RUN curl -o ${WWW_PATH_ROOT}/html/config.inc.php https://raw.githubusercontent.com/izichtl/docker-pkp/refs/heads/feat/only-app/config.inc.php
-# RUN cp -a config.inc.php "${WWW_PATH_ROOT}/html/${PKP_CONF}" 
 RUN cp -a config.TEMPLATE.inc.php "${WWW_PATH_ROOT}/html/${PKP_CONF}" 
 RUN chown -R ${WWW_USER}:${WWW_USER} "${WWW_PATH_ROOT}"
 # Prepare freefont for captcha 
