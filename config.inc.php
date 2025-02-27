@@ -26,7 +26,7 @@
 
 ; Set this to On once the system has been installed
 ; (This is generally done automatically by the installer)
-installed = On
+installed = Off
 
 ; The canonical URL to the OJS installation (excluding the trailing slash)
 base_url = "https://ojs-project-teste-apagar.yoxbgr.easypanel.host"
@@ -254,10 +254,10 @@ umask = 0022
 
 ; Force SSL connections site-wide and also sets the "Secure" flag for session cookies
 ; See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure
-force_ssl = off
+force_ssl = on
 
 ; Force SSL connections for login only
-force_login_ssl = off
+force_login_ssl = on
 
 ; This check will invalidate a session if the user's IP address changes.
 ; Enabling this option provides some additional security, but may cause
